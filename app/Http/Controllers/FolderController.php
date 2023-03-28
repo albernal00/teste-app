@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateFolder;
 use App\Models\Folder;
+use App\Model\User;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeUnit\FunctionUnit;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,6 @@ class FolderController extends Controller
     {
         return view('folders/create');
     }
-
-
 
     public function create(CreateFolder $request){
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateTask;
 use App\Models\Folder;
 use App\Models\Task;
+use App\Model\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\EditTask;
@@ -13,7 +14,7 @@ class TaskController extends Controller
 {
     public function index(int $id)
     {
-        $folders = Auth::user()->folders()->get();
+        $folders = Auth::user   ()->folders()->get();
         $current_folder = Folder::find($id);
 
         $tasks = $current_folder->tasks()->get();
